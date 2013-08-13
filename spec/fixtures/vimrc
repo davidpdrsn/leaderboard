@@ -1,0 +1,2 @@
+map <leader>w :write<cr>
+map <leader>ac :CtrlPChange<cr>
