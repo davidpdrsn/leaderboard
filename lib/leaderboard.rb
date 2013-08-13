@@ -1,3 +1,6 @@
+require 'net/http'
+require 'github_vimrc_finder'
+
 class Leaderboard
   def initialize vimrc_path
     @vimrc_path = vimrc_path
@@ -10,7 +13,15 @@ class Leaderboard
   end
 
   def vimrc
-    File.read @vimrc_path
+    if @vimrc_path.match URI.regexp
+      if @vimrc_path.match /.+\.git$/
+        GitHubVimrcFinder.new(@vimrc_path).vimrc_contents
+      else
+        Net::HTTP.get URI(@vimrc_path)
+      end
+    else
+      File.read @vimrc_path
+    end
   end
 
   def leader_commands_as_strings
