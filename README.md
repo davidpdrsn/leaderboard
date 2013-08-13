@@ -12,3 +12,10 @@ leaders = Leaderboard.new '/path/to/your/vimc'
 puts leaders      # your leadercommands
 puts leaders.size # your number of leader commands
 ```
+
+You can also pass `Leaderboard.new` a url got a vimrc file or a url to a github repo. For example:
+
+```ruby
+Leaderboard.new 'https://github.com/davidpdrsn/dotfiles.git'
+Leaderboard.new 'https://github.com/davidpdrsn/dotfiles/blob/master/vimrc'
+```
