@@ -12,6 +12,8 @@ class Leaderboard
     end
   end
 
+  private
+
   def vimrc
     if @vimrc_path.match URI.regexp
       if @vimrc_path.match /.+\.git$/
