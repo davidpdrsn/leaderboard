@@ -7,7 +7,7 @@ Leaderboard is a ruby class that will parse a vimrc file and find all the leader
 ```ruby
 require 'leaderboard'
 
-leaders = Leaderboard.new '/path/to/your/vimc'
+leaders = Leaderboard.new('/path/to/your/vimc').parse
 
 puts leaders      # your leadercommands
 puts leaders.size # your number of leader commands
@@ -16,6 +16,6 @@ puts leaders.size # your number of leader commands
 You can also pass `Leaderboard.new` a url got a vimrc file or a url to a github repo. For example:
 
 ```ruby
-Leaderboard.new 'https://github.com/davidpdrsn/dotfiles.git'
-Leaderboard.new 'https://github.com/davidpdrsn/dotfiles/blob/master/vimrc'
+Leaderboard.new('https://github.com/davidpdrsn/dotfiles.git').parse
+Leaderboard.new('https://github.com/davidpdrsn/dotfiles/blob/master/vimrc').parse
 ```
